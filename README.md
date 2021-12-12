@@ -2,8 +2,8 @@
 API to control locations and mobile entities for Kelpie Tracker
 
 Resources available for API access:
-* [**Fence**](#Fence)
-* [**Positions**](#reference/resources/products)
+* [**Fence**](https://github.com/kelpie-tracker/kelpie-api#fence-fences)
+* [**Positions**](https://github.com/kelpie-tracker/kelpie-api#position-positions)
 
 ## Methods
 Requests for the API must follow the standards:
