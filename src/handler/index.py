@@ -23,7 +23,7 @@ def healthcheck():
 def positions():
     if request.method == "POST":
         content = request.json
-        new_position = Position(content['id'], content['date'], content['longitude'], content['latitude'])
+        new_position = Position(content['id'], content['longitude'], content['latitude'])
         db.session.add(new_position)
         db.session.commit()
         return jsonify({"message": "new position added"})

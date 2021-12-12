@@ -7,7 +7,7 @@ services:
       - "3306:3306"
     environment:
       - MYSQL_ROOT_HOST=%
-      - MYSQL_ROOT_PASSWORD=MySql2019!
+      - MYSQL_ROOT_PASSWORD=teste123
       - TZ=America/Sao_Paulo
   api:
     build: .
@@ -20,9 +20,8 @@ services:
     environment:
       - TZ=America/Sao_Paulo
       - MYSQL_USER=root
-      - MYSQL_PASSWORD=MySql2019!
+      - MYSQL_PASSWORD=teste123
       - MYSQL_HOST=db
-      - MYSQL_DATABASE=testedb
+      - MYSQL_DATABASE=kelpie
     depends_on:
       - db
-      - redis

@@ -1,6 +1,6 @@
 import os
 ## CONF MYSQL
-MYSQL_ENDPOINT = os.environ.get('MYSQL_ENDPOINT', 'mysql://root:MySql2019!@db/testedb')
+MYSQL_ENDPOINT = os.environ.get('MYSQL_ENDPOINT', 'mysql://root:teste123@db/kelpie')
 # Aumentar a persistência da conexão ao banco
 SQLALCHEMY_POOL_RECYCLE = 280
 SQLALCHEMY_POOL_TIMEOUT = 20
