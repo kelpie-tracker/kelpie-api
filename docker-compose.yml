@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  db:
+    image: mysql/mysql-server:5.6
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_HOST=%
+      - MYSQL_ROOT_PASSWORD=MySql2019!
+      - TZ=America/Sao_Paulo
+  api:
+    build: .
+    command: bash -c "sleep 15 && cd /opt/app-root/current && pwd && cat Makefile && make setup-python && make db_local && make run"
+    volumes:
+      - .:/opt/app-root/current
+    ports:
+      - "5000:5000"
+      - "8080:5000"
+    environment:
+      - TZ=America/Sao_Paulo
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=MySql2019!
+      - MYSQL_HOST=db
+      - MYSQL_DATABASE=testedb
+    depends_on:
+      - db
+      - redis
